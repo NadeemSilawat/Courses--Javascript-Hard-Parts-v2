@@ -26,8 +26,23 @@ const newOutput = MultiplyBy2(10);
 
 // So what about a delay of 0ms
 
-    function printHello(){
-        console.log(" Hello");
-    }
-    setTimeout(printHello,0);
-    console.log("Me first");
+    // function printHello(){
+    //     console.log(" Hello");
+    // }
+    // setTimeout(printHello,0);
+    // console.log("Me first");
+
+// We’re interacting with a world outside of JavaScript now - so we need rules]]
+
+function printHello(){console.log("Hello")}
+function blockforsec(){
+// blocks in the JavaScript thread for 1 sec
+}
+setTimeout(printHello,0);
+
+blockforsec();
+
+console.log("Me first");
+
+
+
