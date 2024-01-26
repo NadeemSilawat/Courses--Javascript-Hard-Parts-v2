@@ -13,8 +13,7 @@ console.log("Me first");
 /************************************************/
 
 // But we need to know how our promise-deferred functionality gets back into JavaScript to be run
-
-function dsply(data) { console.log(data) }
+function display(data) { console.log(data) }
 function printHello() { console.log("Hello"); }
 
 function blockFor300ms() {/*block js thread for 300ms*/ }
@@ -22,13 +21,17 @@ function blockFor300ms() {/*block js thread for 300ms*/ }
 
 setTimeout(printHello, 0);
 
-const furtureData = fetch('https//www.google.com')
+const furtureData = fetch('https://jsonplaceholder.org/users/3')
+furtureData.then((response)=> {
+    return response.json();
+})
+.then(display)
 
-furtureData.then(display)
 
 blockFor300ms()
-// console.log("Me First");
 
+
+console.log("Me First");
 
 
 
